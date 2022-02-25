@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 
- var filePath = './client/build/index.html';
+ var filePath = '/client/build/index.html';
  var resolvedPath = path.resolve(filePath);
 
 const PORT = process.env.PORT || 4005;
@@ -11,11 +11,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
-app.use(express.static(path.join(__dirname, './client/build/')))
+app.use(express.static(path.join(__dirname, '/client/build/')))
 
 app.get('/', function(_, res) {
   
-  res.sendFile(path.join(__dirname, './client/build/'), function(err) {
+  res.sendFile(path.join(__dirname, '/client/build/'), function(err) {
     if (err) {
       res.status(500).send(err)
     }
